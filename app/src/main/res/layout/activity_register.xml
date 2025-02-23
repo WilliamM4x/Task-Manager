@@ -30,6 +30,15 @@
                 android:src="@drawable/logout_24px"
                 android:layout_gravity="end"
             />
+
+            <ImageView
+                android:id="@+id/btnHome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/home_24px"
+                android:layout_gravity="end"
+                android:layout_marginRight="16dp"
+                />
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -77,13 +86,5 @@
             android:layout_marginTop="16dp"
             style="@style/btn_entry"
             />
-        <TextView
-            android:id="@+id/backToLogin"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:text="Voltar para login"/>
     </androidx.appcompat.widget.LinearLayoutCompat>
 </androidx.constraintlayout.widget.ConstraintLayout>

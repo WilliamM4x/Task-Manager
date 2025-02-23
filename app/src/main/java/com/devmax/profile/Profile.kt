@@ -14,12 +14,17 @@ class Profile : AppCompatActivity() {
         setContentView(R.layout.activity_profile)
 
         val logout = findViewById<ImageView>(R.id.btnLogout)
+        val home = findViewById<ImageView>(R.id.btnHome)
 
         logout.setOnClickListener {
             Navigator.goTo(this, Lgin::class.java)
             finish()
         }
 
+        home.setOnClickListener{
+            Navigator.goTo(this, Tasks_main::class.java)
+            finish()
+        }
 
     }
-    }
+}

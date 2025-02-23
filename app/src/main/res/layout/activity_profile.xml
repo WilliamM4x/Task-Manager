@@ -28,10 +28,21 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/logout_24px"
+                android:layout_marginRight="8dp"
                 android:layout_gravity="end"
               />
+
+            <ImageView
+                android:id="@+id/btnHome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/home_24px"
+                android:layout_gravity="end"
+                android:layout_marginRight="16dp"
+                />
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
+
 
 
     <androidx.appcompat.widget.LinearLayoutCompat
@@ -45,9 +56,36 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent">
 
-
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_image"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/menu"
+            app:civ_border_width="3dp"
+            app:civ_border_color="#FF000000"
+            android:layout_gravity="center"/>
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnCam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|start"
+            android:layout_marginLeft="60dp"
+            android:src="@drawable/add_a_photo_24px"
+            app:layout_anchor="@+id/profile_image"
+            />
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnGalery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginTop="-57dp"
+            android:layout_marginRight="60dp"
+            android:src="@drawable/photo_library_24px"
+            app:layout_anchor="@+id/profile_image"
+            />
 
         <EditText
+            android:layout_marginTop="32dp"
             android:id="@+id/email"
             android:hint="E-mail"
             android:layout_width="match_parent"

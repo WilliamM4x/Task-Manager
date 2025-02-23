@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">profile</string>
+    <string name="app_name">Task Manager</string>
     <string name="Login">E-mail</string>
     <string name="Password">Password</string>
     <string name="bnt_entry">Entrar</string>
@@ -11,4 +11,5 @@
     <string name="profileTittle">Perfil</string>
     <string name="registerTittle">Registro</string>
     <string name="frgPassTittle">Recuperação de senha</string>
+    <string name="ETask">Edição de Tarefa</string>
 </resources>
