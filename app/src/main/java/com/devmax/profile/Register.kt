@@ -16,13 +16,13 @@ class Register : AppCompatActivity() {
         setContentView(R.layout.activity_register)
 
         val btnSingIn = findViewById<Button>(R.id.btnSingIn)
-        val backTask = findViewById<ImageView>(R.id.btnHome)
+
         val singinEmail = findViewById<TextView>(R.id.singinEmail)
         val singinPassword = findViewById<TextView>(R.id.singinPassword)
         val agreeSingPassword = findViewById<TextView>(R.id.agreeSingPassword)
         val btnLogout = findViewById<ImageView>(R.id.btnLogout)
 
-        backTask.setOnClickListener {Navigator.goTo(this, Tasks_main::class.java)}
+
         btnLogout.setOnClickListener {Navigator.goTo(this, Lgin::class.java)}
 
         btnSingIn.setOnClickListener {
