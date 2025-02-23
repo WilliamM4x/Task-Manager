@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">profile</string>
+    <string name="Login">E-mail</string>
+    <string name="Password">Password</string>
+    <string name="bnt_entry">Entrar</string>
+    <string name="ForgotPassword">Esqueci a senha.</string>
+    <string name="Register">Não tenho uma conta</string>
+    <string name="image_para_login">Imagem de login</string>
+    <string name="registroTittle">Registro</string>
+    <string name="taskTittle">Tarefas</string>
+    <string name="profileTittle">Perfil</string>
+    <string name="registerTittle">Registro</string>
+    <string name="frgPassTittle">Recuperação de senha</string>
+</resources>
