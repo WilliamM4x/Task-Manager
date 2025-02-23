@@ -18,17 +18,15 @@ class ForgotPass : AppCompatActivity() {
 
         val btnRecovery = findViewById<Button>(R.id.btnRecovery)
         val recoveryEmail = findViewById<TextView>(R.id.recoveryEmail)
-        val backLogin = findViewById<TextView>(R.id.backToLogin)
         val btnLogout = findViewById<ImageView>(R.id.btnLogout)
 
-        val recoEmail= recoveryEmail.text.toString()
 
         btnRecovery.setOnClickListener {
-           if(recoEmail.isNotEmpty()){Toast.makeText(this,"E-mail enviado",Toast.LENGTH_SHORT).show()}
-           else{recoveryEmail.error = "Preencha o campo"}
+           val recoEmail= recoveryEmail.text.toString()
+           if(recoEmail.isEmpty()){recoveryEmail.error = "Preencha o campo."}
+           else{Toast.makeText(this,"E-mail enviado.",Toast.LENGTH_SHORT).show()}
         }
 
-        backLogin.setOnClickListener {Navigator.goTo(this, Lgin::class.java)}
         btnLogout.setOnClickListener {Navigator.goTo(this, Lgin::class.java)}
     }
 }

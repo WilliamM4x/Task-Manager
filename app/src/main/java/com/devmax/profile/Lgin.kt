@@ -41,7 +41,7 @@ class Lgin : AppCompatActivity() {
 
         notRegister.setOnClickListener {
             Navigator.goTo(this,Register::class.java)
-           // finish()
+            finish()
         }
 
 

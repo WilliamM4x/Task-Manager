@@ -23,7 +23,8 @@ class Register : AppCompatActivity() {
         val btnLogout = findViewById<ImageView>(R.id.btnLogout)
 
 
-        btnLogout.setOnClickListener {Navigator.goTo(this, Lgin::class.java)}
+        btnLogout.setOnClickListener {Navigator.goTo(this, Lgin::class.java)
+        finish()}
 
         btnSingIn.setOnClickListener {
             val pass = singinPassword.text.toString()
