@@ -25,7 +25,7 @@ class Register : AppCompatActivity() {
         val btnSingIn = findViewById<Button>(R.id.btnSingIn)
 
         val singinEmail = findViewById<EditText>(R.id.singinEmail)
-        val singPassword = supportFragmentManager.beginTransaction().replace(R.id.passInput, PassDifficult()).commitNow()
+        val singPassword = supportFragmentManager.findFragmentById(passInput) as PassDifficult
         val agreeSingPassword = findViewById<EditText>(R.id.agreeSingPassword)
         val btnLogout = findViewById<ImageView>(R.id.btnLogout)
 
