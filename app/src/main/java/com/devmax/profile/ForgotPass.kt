@@ -7,8 +7,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.devmax.Untils.Navigator
 
 class ForgotPass : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,6 +26,6 @@ class ForgotPass : AppCompatActivity() {
            else{Toast.makeText(this,"E-mail enviado.",Toast.LENGTH_SHORT).show()}
         }
 
-        btnLogout.setOnClickListener {Navigator.goTo(this, Lgin::class.java)}
+        btnLogout.setOnClickListener { Navigator.goTo(this, Lgin::class.java)}
     }
 }

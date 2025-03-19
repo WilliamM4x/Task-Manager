@@ -5,8 +5,7 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.devmax.Untils.Navigator
 
 class Lgin : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -14,13 +13,13 @@ class Lgin : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_lgin)
 
-        val BTNentry = findViewById<Button>(R.id.btn_entry)
+        val bTNentry = findViewById<Button>(R.id.btn_entry)
         val forgotPass = findViewById<TextView>(R.id.ForgotPass)
         val notRegister = findViewById<TextView>(R.id.Register)
         val logintext = findViewById<TextView>(R.id.login)
         val passtext = findViewById<TextView>(R.id.Password)
 
-        BTNentry.setOnClickListener {
+        bTNentry.setOnClickListener {
            val pass = passtext.text.toString()
            val login = logintext.text.toString()
 

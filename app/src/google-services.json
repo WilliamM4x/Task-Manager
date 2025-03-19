@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "842604945621",
+    "project_id": "taskmanager-9ca99",
+    "storage_bucket": "taskmanager-9ca99.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:842604945621:android:d9acce642b0c30ef26c25c",
+        "android_client_info": {
+          "package_name": "com.devmax.profile"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCoPVrE-zhwM3AUd9GI2oWC20oHL-FcuoQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

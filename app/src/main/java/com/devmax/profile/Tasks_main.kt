@@ -2,13 +2,11 @@ package com.devmax.profile
 
 import android.os.Bundle
 import android.widget.ArrayAdapter
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.ListView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.devmax.Untils.Navigator
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class Tasks_main : AppCompatActivity() {
