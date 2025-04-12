@@ -52,5 +52,14 @@ class Tasks_main : AppCompatActivity() {
             finish()
         }
 
+        verifySession(firebaseAuth.currentUser)
+
     }
+
+    private fun verifySession(firebaseUser: Any?) {
+        if (firebaseUser == null) {
+        Navigator.goTo(this, Lgin::class.java)
+        }
+    }
+
 }

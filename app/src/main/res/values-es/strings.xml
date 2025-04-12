@@ -37,4 +37,5 @@
     <string name="linkRecovery">Enlace de recuperación enviado.</string>
     <string name="noUser">Usuario no encontrado.</string>
     <string name="loding">Cargando...</string>
+    <string name="loadTaskFail">Error al cargar tareas.</string>
 </resources>

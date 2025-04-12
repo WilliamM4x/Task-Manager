@@ -7,16 +7,21 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.ListView
+import android.widget.Toast
 import com.devmax.Untils.Navigator
 import com.devmax.profile.R
 import com.devmax.profile.Task_edit
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
 class Task_list : Fragment() {
 
-
-
+    val firebaseAuth = FirebaseAuth.getInstance()
+    val uid = firebaseAuth.currentUser?.uid
+    val dataBaseRef = FirebaseDatabase.getInstance().getReference("users/$uid/tasks")
     var data = ArrayList<String>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,10 +47,36 @@ class Task_list : Fragment() {
             Navigator.goTo(view.context, Task_edit::class.java)
         }
 
+
+        adapter.notifyDataSetChanged()
+
+        loadTask(adapter)
+
         return view
     }
 
+    private fun loadTask(adapter: ArrayAdapter<String>) {
+        dataBaseRef.addValueEventListener(object : ValueEventListener {
+            val auxAdapter=adapter
+            override fun onDataChange(snapshot: DataSnapshot) {
+                listItems.clear()
+                for(child in snapshot.children){
+                    val task = child.child("task").getValue(String::class.java)
+                    val description = child.child("description").getValue(String::class.java)
+                    val date = child.child("date").getValue(String::class.java)
+                    val time = child.child("time").getValue(String::class.java)
 
+                    if (task != null && description != null && date != null && time != null) {
+                        listItems.add("$task\n$description\n$date\n$time")
+                    }
+                }
+            }
+            override fun onCancelled(error: DatabaseError) {
+               Toast.makeText(requireContext(), R.string.loadTaskFail, Toast.LENGTH_SHORT).show()
+            }
+
+        })
+    }
 
 
 }
