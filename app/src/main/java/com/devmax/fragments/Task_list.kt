@@ -47,9 +47,6 @@ class Task_list : Fragment() {
             Navigator.goTo(view.context, Task_edit::class.java)
         }
 
-
-        adapter.notifyDataSetChanged()
-
         loadTask(adapter)
 
         return view
@@ -59,7 +56,7 @@ class Task_list : Fragment() {
         dataBaseRef.addValueEventListener(object : ValueEventListener {
             val auxAdapter=adapter
             override fun onDataChange(snapshot: DataSnapshot) {
-                listItems.clear()
+                data.clear()
                 for(child in snapshot.children){
                     val task = child.child("task").getValue(String::class.java)
                     val description = child.child("description").getValue(String::class.java)
@@ -67,8 +64,9 @@ class Task_list : Fragment() {
                     val time = child.child("time").getValue(String::class.java)
 
                     if (task != null && description != null && date != null && time != null) {
-                        listItems.add("$task\n$description\n$date\n$time")
+                        data.add("$task\n$description\n$date\n$time")
                     }
+                    adapter.notifyDataSetChanged()
                 }
             }
             override fun onCancelled(error: DatabaseError) {

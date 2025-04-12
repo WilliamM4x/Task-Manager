@@ -44,10 +44,10 @@ class Task_edit : AppCompatActivity() {
         btnSave.setOnClickListener {
             val title = taskTitle.text.toString()
             val description = descriptonTask.text.toString()
-//            val date = intent.getStringExtra("date").toString()
-            val time = intent.getStringExtra("time").toString()
+            val time = taskFragment?.txtTime!!?.text.toString()
+            val date = taskFragment?.txtDate!!?.text.toString()
 
-            saveTask(title, description, "02/03/25", time)
+            saveTask(title, description, date, time)
         }
 
 
@@ -73,12 +73,13 @@ class Task_edit : AppCompatActivity() {
                 "description" to description,
                 "date" to date,
                 "time" to time
-            )
 
+            )
             dataBaseRef.push().setValue(taskMap)
             Handler(Looper.getMainLooper()).postDelayed({
+             Navigator.goTo(this, Tasks_main::class.java)
                 finish()
-            },2000)
+            },1500)
         }else{
             Toast.makeText(this, "Tarefa não salva EDITAR", Toast.LENGTH_SHORT).show()
         }

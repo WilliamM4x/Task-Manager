@@ -16,6 +16,10 @@ import com.devmax.profile.Task_edit
 import java.util.Calendar
 
 class PickDate : Fragment() {
+
+    lateinit var txtTime: EditText
+    lateinit var txtDate: EditText
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }

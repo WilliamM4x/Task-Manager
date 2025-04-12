@@ -42,13 +42,12 @@ class WeatherFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_weather, container, false)
 
 
-//        if(ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED){
-//
-//
-//        }else{
-//            requestPermissions(arrayOf(Manifest.permission.ACCESS_FINE_LOCATION), 1)
-//        }
-        getLocation(view)
+        if(ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED){
+            getLocation(view)
+        }else{
+            requestPermissions(arrayOf(Manifest.permission.ACCESS_FINE_LOCATION), 1)
+        }
+
 
         return view
     }
@@ -168,15 +167,11 @@ class WeatherFragment : Fragment() {
         locationManeger.requestLocationUpdates(LocationManager.GPS_PROVIDER,0,0f, object: LocationListener{
             override fun onLocationChanged(location: Location) {
                 lifecycleScope.launch {
-                    Log.e("WeatherFragment", "NAAAA1:")
                     val weatheData = getDataWeather(location.latitude, location.longitude)
-                    Log.e("WeatherFragment", "NAAAA2:")
+
                     val cityData = getCity(location.latitude, location.longitude)
-                    Log.e("WeatherFragment", "NAAAA3:")
 
                         upImage(weatheData, cityData, view)
-                    Log.e("WeatherFragment", "NAAAA4:")
-
 
 
                 }
