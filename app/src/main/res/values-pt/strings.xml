@@ -1,0 +1,42 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Task Manager</string>
+    <string name="Login">E-mail</string>
+    <string name="Password">Senha</string>
+    <string name="bnt_entry">Entrar</string>
+    <string name="ForgotPassword">Esqueci a senha.</string>
+    <string name="Register">Não tenho uma conta</string>
+    <string name="image_para_login">Imagem de login</string>
+    <string name="taskTittle">Tarefas</string>
+    <string name="profileTittle">Perfil</string>
+    <string name="registerTittle">Registro</string>
+    <string name="frgPassTittle">Recuperação de senha</string>
+    <string name="ETask">Edição de Tarefa</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="empty_pass">Senha Vazia</string>
+    <string name="very_short_pass">Senha muito curta</string>
+    <string name="weake_pass">Senha fraca</string>
+    <string name="commom_pass">Senha comum</string>
+    <string name="strong_pass">Senha forte</string>
+    <string name="very_strong_pass">Senha muito forte</string>
+    <string name="very_weake_pass">Senha muito fraca</string>
+    <string name="agreePassword">Confirme a senha</string>
+    <string name="date">Data</string>
+    <string name="time">Hora</string>
+    <string name="emailRecovery">E-mail de recuperação</string>
+    <string name="btnSend">Enviar</string>
+    <string name="btnSave">Salve</string>
+    <string name="subscribe">Cadastrar</string>
+    <string name="noMatchPass">As senhas não conferem.</string>
+    <string name="subsSucess">Cadastro realizado com sucesso</string>
+    <string name="empty_email">O e-mail não pode estar vazio</string>
+    <string name="Task">Task</string>
+    <string name="DescriptionTask">Descrição da tarefa</string>
+    <string name="nOsubsSucess">Falha ao registrar.</string>
+    <string name="Welcome">Bem-vindo.</string>
+    <string name="linkRecovery">Link de recuperação enviado.</string>
+    <string name="noUser">Usuário não localizado.</string>
+    <string name="loding">Carregando...</string>
+
+
+</resources>

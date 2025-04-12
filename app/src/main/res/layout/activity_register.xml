@@ -45,14 +45,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/singinEmail"
-            android:hint="E-mail"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:layout_gravity="top"
-            />
+            android:layout_height="wrap_content">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/singinEmail"
+                android:hint="E-mail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:layout_gravity="top"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/singinPassword"
@@ -60,24 +64,31 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
+            app:passwordToggleEnabled="true"
             android:layout_gravity="top"
             app:layout_constraintTop_toBottomOf="@+id/singinEmail"
             app:layout_constraintStart_toStartOf="parent"
             tools:layout="@layout/fragment_pass_difficult" />
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:passwordToggleEnabled="true">
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/agreeSingPassword"
-            android:hint="Confirme a senha"
+            android:hint="@string/agreePassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:layout_gravity="top"
+            android:inputType="textPassword"
             />
+    </com.google.android.material.textfield.TextInputLayout>
         <Button
             android:id="@+id/btnSingIn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Cadastrar"
+            android:text="@string/subscribe"
             android:textSize="20sp"
             android:layout_marginTop="16dp"
             style="@style/btn_entry"

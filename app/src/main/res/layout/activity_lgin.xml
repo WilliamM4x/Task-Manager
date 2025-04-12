@@ -6,27 +6,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Lgin">
-<!--
-
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="28dp"
-        android:layout_height="113dp"
-        android:elevation="4dp"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        app:layout_constraintBottom_toTopOf="@id/login_layout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="parent"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
--->
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/layout_image"
-        android:layout_width="0dp"
-        android:layout_height="200dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_margin="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="76dp"
+        android:padding="8dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/login_layout"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,8 +22,8 @@
     <ImageView
         android:id="@+id/image_login"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="16dp"
         android:src="@drawable/menu"
         android:contentDescription="@string/image_para_login"
         />
@@ -64,6 +52,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="16dp"
+        app:passwordToggleEnabled="true"
         app:layout_constraintTop_toBottomOf="@id/login_layout"
         >
         <com.google.android.material.textfield.TextInputEditText
@@ -71,6 +60,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/Password"
+            android:inputType="textPassword"
             android:textColor="#3F51B5"
             />
     </com.google.android.material.textfield.TextInputLayout>

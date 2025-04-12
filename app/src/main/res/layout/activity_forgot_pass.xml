@@ -47,7 +47,7 @@
 
    <com.google.android.material.textfield.TextInputEditText
        android:id="@+id/recoveryEmail"
-       android:hint="E-mail de recuperação"
+       android:hint="@string/emailRecovery"
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
        android:layout_marginTop="32dp"
@@ -57,7 +57,7 @@
        android:id="@+id/btnRecovery"
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
-       android:text="Enviar"
+       android:text="@string/btnSend"
        android:textSize="20sp"
        android:layout_marginTop="16dp"
        style="@style/btn_entry"

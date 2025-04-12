@@ -7,28 +7,34 @@ import android.widget.ListView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.devmax.Untils.Navigator
+import com.devmax.fragments.Task_list
+import com.devmax.fragments.WeatherFragment
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.firebase.Firebase
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.auth.auth
 
 class Tasks_main : AppCompatActivity() {
+    lateinit var firebaseAuth : FirebaseAuth
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.tasks_main)
 
+        firebaseAuth = Firebase.auth
 
         val add_task = findViewById<FloatingActionButton>(R.id.add_task)
         val logout = findViewById<ImageView>(R.id.btnLogout)
         val profile = findViewById<ImageView>(R.id.btnProfile)
-        val task = findViewById<ListView>(R.id.listTask)
 
-        val data = listOf("Task 1", "Task 2", "Task 3")
-        val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, data)
-        task.adapter = adapter
+        supportFragmentManager.beginTransaction().replace(R.id.fragmentWeather, WeatherFragment()).commitNow()
+        val weatherFragment = supportFragmentManager.findFragmentById(R.id.fragmentWeather) as WeatherFragment
 
-        task.setOnItemClickListener { parent, view, position, id ->
+        supportFragmentManager.beginTransaction().replace(R.id.frag_list, Task_list()).commitNow()
+        val taskFragment = supportFragmentManager.findFragmentById(R.id.frag_list) as Task_list
 
-            Navigator.goTo(this, Task_edit::class.java)
-        }
 
         profile.setOnClickListener {
             Navigator.goTo(this, Profile::class.java)
@@ -41,6 +47,7 @@ class Tasks_main : AppCompatActivity() {
         }
 
         logout.setOnClickListener {
+            firebaseAuth.signOut()
             Navigator.goTo(this, Lgin::class.java)
             finish()
         }

@@ -1,13 +1,95 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.devmax.fragments.PickDate">
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.devmax.fragments.PickDate"
+    android:orientation="vertical">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <LinearLayout
+        android:id="@+id/inLayout_date"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/inLayout_Imagdate"
+        app:layout_constraintTop_toBottomOf="@id/layout_inputProfile"
+        app:layout_constraintBottom_toTopOf="@+id/inLayout_time"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp"
+        android:layout_marginRight="40dp">
+        <EditText
+            android:id="@+id/date"
+            android:hint="@string/date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@+id/btn_Date"
+            android:enabled="false"
+            android:layout_gravity="start"
+            />
+    </LinearLayout>
 
-</FrameLayout>
+    <LinearLayout
+        android:id="@+id/inLayout_Imagdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/inLayout_time"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/inLayout_date"
+        app:layout_constraintTop_toBottomOf="@id/descriptonTask"
+        android:layout_marginTop="-50dp"
+        android:layout_marginLeft="300dp">
+
+        <ImageView
+            android:id="@+id/btn_Date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:src="@drawable/calendar_month_24px"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/inLayout_time"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/inLayout_Imagdate"
+        app:layout_constraintTop_toBottomOf="@id/inLayout_date"
+        app:layout_constraintBottom_toTopOf="@+id/btnSave"
+        android:layout_width="match_parent"
+        android:padding="8dp"
+        android:layout_marginRight="40dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <EditText
+            android:id="@+id/time"
+            android:hint="@string/time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/inLayout_Imagtime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnSave"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/inLayout_time"
+        app:layout_constraintTop_toBottomOf="@id/inLayout_Imagdate"
+        android:layout_marginTop="-50dp"
+        android:layout_marginLeft="300dp">
+
+        <ImageView
+            android:id="@+id/btn_Time"
+            android:layout_gravity="end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/timer_24px"/>
+    </LinearLayout>
+
+</LinearLayout>
