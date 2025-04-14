@@ -86,11 +86,13 @@ class WeatherFragment : Fragment() {
         val city = view.findViewById<TextView>(R.id.textWLocation)
         val country = view.findViewById<TextView>(R.id.textWcountry)
         val imageWather = view.findViewById<ImageView>(R.id.imageWather)
+        val state = view.findViewById<TextView>(R.id.textWstate)
         val icon = getIconWeather(weatherData.condition)
         val iconColor = getColorWeather (weatherData.condition)
 
         try {
             temperatura.text="${weatherData.temp}°C"
+            state.text="${weatherData.description}"
             city.text= "${cityData.city}"
             country.text="${cityData.district}"
 
@@ -110,7 +112,7 @@ class WeatherFragment : Fragment() {
     //dados do clima
     private suspend fun getDataWeather(latitude: Double, longitude: Double): weatherData {
         val apiKey = "a159e1cfbd724e04aef173513251104"
-        val url="https://api.weatherapi.com/v1/current.json?key=$apiKey&q=$latitude,$longitude&aqi=no"
+        val url="https://api.weatherapi.com/v1/current.json?lang=pt&key=$apiKey&q=$latitude,$longitude&aqi=no"
         try {
             val jsonText = withContext(Dispatchers.IO) {
                 URL(url).readText()

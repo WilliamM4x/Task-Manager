@@ -38,5 +38,10 @@
     <string name="noUser">User not founded.</string>
     <string name="loding">Loading...</string>
     <string name="loadTaskFail">Error loading tasks.</string>
+    <string name="deleteTask">Delete task?</string>
+    <string name="mensegeDeleteTask">Are you sure you want to delete task?</string>
+    <string name="confirmDeleteTask">Agree</string>
+    <string name="sucessDeleteTask">Sucessfull remove task.</string>
+    <string name="cancel">Cancel</string>
 
 </resources>

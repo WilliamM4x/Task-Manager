@@ -38,6 +38,11 @@
     <string name="noUser">Usuário não localizado.</string>
     <string name="loding">Carregando...</string>
     <string name="loadTaskFail">Erro ao carregar tarefas.</string>
+    <string name="deleteTask">Deletar a ativdade?</string>
+    <string name="mensegeDeleteTask">Você tem certeza que deseja deleter a atividade?</string>
+    <string name="confirmDeleteTask">Confirme</string>
+    <string name="sucessDeleteTask">Atividade removida com sucesso.</string>
+    <string name="cancel">Cancelar</string>
 
 
 </resources>

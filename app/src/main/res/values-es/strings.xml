@@ -38,4 +38,9 @@
     <string name="noUser">Usuario no encontrado.</string>
     <string name="loding">Cargando...</string>
     <string name="loadTaskFail">Error al cargar tareas.</string>
+    <string name="deleteTask">¿Eliminar tarea?</string>
+    <string name="mensegeDeleteTask">¿Estás seguro de que quieres eliminar la tarea?</string>
+    <string name="confirmDeleteTask">Aceptar</string>
+    <string name="sucessDeleteTask">Tarea eliminada con éxito.</string>
+    <string name="cancel">Cancelar</string>z
 </resources>

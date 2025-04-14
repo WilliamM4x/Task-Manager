@@ -1,5 +1,6 @@
 package com.devmax.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.ListView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import com.devmax.Untils.Navigator
 import com.devmax.profile.R
 import com.devmax.profile.Task_edit
@@ -37,38 +39,63 @@ class Task_list : Fragment() {
 
         val task = view.findViewById<ListView>(R.id.listTask)
 
-
         val adapter = ArrayAdapter(view.context, android.R.layout.simple_list_item_1, data)
         task.adapter = adapter
 
-        task.setOnItemClickListener { parent, view, position, id ->
-            val selectedTask = data[position]
-
-            Navigator.goTo(view.context, Task_edit::class.java)
-        }
-
-        loadTask(adapter)
+        loadTask(task,adapter)
 
         return view
     }
 
-    private fun loadTask(adapter: ArrayAdapter<String>) {
+    private fun loadTask(task: ListView,adapter: ArrayAdapter<String>) {
+
         dataBaseRef.addValueEventListener(object : ValueEventListener {
             val auxAdapter=adapter
+
             override fun onDataChange(snapshot: DataSnapshot) {
                 data.clear()
-                for(child in snapshot.children){
-                    val task = child.child("task").getValue(String::class.java)
-                    val description = child.child("description").getValue(String::class.java)
-                    val date = child.child("date").getValue(String::class.java)
-                    val time = child.child("time").getValue(String::class.java)
 
-                    if (task != null && description != null && date != null && time != null) {
-                        data.add("$task\n$description\n$date\n$time")
-                    }
-                    adapter.notifyDataSetChanged()
+                for (child in snapshot.children) {
+                      data.add(child.child("title").value.toString())
+
                 }
+
+                adapter.notifyDataSetChanged()
+
+                task.setOnItemClickListener { parent, view, position, id ->
+                    val selectedTask = snapshot.children.toList()[position].key
+
+                    val intent= Intent(view.context, Task_edit::class.java)
+                    intent.putExtra("selectedTask", selectedTask)
+//                    val intentDT= Intent(view.context, PickDate::class.java)
+//                    intentDT.putExtra("selectedTask", selectedTask)
+
+                    Navigator.goTo(view.context, Task_edit::class.java)
+                }
+
+                task.setOnItemLongClickListener { parent, view,position, id ->
+                    val selectedTask = snapshot.children.toList()[position].key
+
+                    if (selectedTask != null) {
+                        AlertDialog.Builder(view.context)
+                            .setTitle(R.string.deleteTask)
+                            .setMessage(R.string.mensegeDeleteTask)
+                            .setPositiveButton(R.string.confirmDeleteTask){ dialog, which ->
+                                dataBaseRef.child(selectedTask).removeValue()
+                                dialog.dismiss()
+                                Toast.makeText(view.context, R.string.sucessDeleteTask, Toast.LENGTH_SHORT).show()
+                            }
+                            .setNegativeButton(R.string.cancel){dialog, wich ->
+                                dialog.dismiss()
+                            }
+                            .show()
+                    }
+                    true
+
+                }
+
             }
+
             override fun onCancelled(error: DatabaseError) {
                Toast.makeText(requireContext(), R.string.loadTaskFail, Toast.LENGTH_SHORT).show()
             }
