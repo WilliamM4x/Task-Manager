@@ -23,7 +23,7 @@ class Task_edit : AppCompatActivity() {
 
     val firebaseAuth = FirebaseAuth.getInstance()
     val uid = firebaseAuth.currentUser?.uid
-    val dataBaseRef = FirebaseDatabase.getInstance().getReference("users/$uid/tasks")
+    val dataBaseRef = FirebaseDatabase.getInstance().getReference("users/${uid}/tasks")
     var task_id: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,7 +43,7 @@ class Task_edit : AppCompatActivity() {
         val backTask = findViewById<ImageView>(R.id.btnHome)
         val btnLogout = findViewById<ImageView>(R.id.btnLogout)
 
-        loadTask(taskTitle, descriptonTask)
+        //loadTask(taskTitle, descriptonTask)
 
         btnSave.setOnClickListener {
             val title = taskTitle.text.toString()

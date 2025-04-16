@@ -1,5 +1,5 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <string name="app_name">Task Manager</string>
+    <string name="app_name">Administrador de tareas</string>
     <string name="Login">E-mail</string>
     <string name="Password">Contraseña</string>
     <string name="bnt_entry">Iniciar sesión</string>
@@ -42,5 +42,11 @@
     <string name="mensegeDeleteTask">¿Estás seguro de que quieres eliminar la tarea?</string>
     <string name="confirmDeleteTask">Aceptar</string>
     <string name="sucessDeleteTask">Tarea eliminada con éxito.</string>
-    <string name="cancel">Cancelar</string>z
+    <string name="cancel">Cancelar</string>
+    <string name="permission_granted">Permiso concedido.</string>
+    <string name="permission_refused">Permiso denegado.</string>
+    <string name="error_capturrImage">Error al capturar la imagen</string>
+    <string name="profile_saved">Perfil guardado.</string>
+    <string name="name">Nombre</string>
+    <string name="username">Nombre de usuario</string>
 </resources>

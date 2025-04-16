@@ -78,7 +78,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
-            android:layout_marginTop="-57dp"
+            android:layout_marginTop="-56dp"
             android:layout_marginRight="60dp"
             android:src="@drawable/photo_library_24px"
             app:layout_anchor="@+id/profile_image"
@@ -87,17 +87,18 @@
         <EditText
             android:layout_marginTop="32dp"
             android:id="@+id/email"
-            android:hint="E-mail"
+            android:hint="@string/Login"
             android:layout_width="match_parent"
+            android:enabled="false"
             android:layout_height="wrap_content"/>
         <EditText
             android:id="@+id/username"
-            android:hint="Username"
+            android:hint="@string/username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
         <EditText
             android:id="@+id/name"
-            android:hint="Nome"
+            android:hint="@string/name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
@@ -105,7 +106,7 @@
             android:id="@+id/btnSave"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Salvar"
+            android:text="@string/btnSave"
             android:textSize="20sp"
             android:layout_marginTop="16dp"
             style="@style/btn_entry"

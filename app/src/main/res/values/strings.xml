@@ -43,5 +43,11 @@
     <string name="confirmDeleteTask">Agree</string>
     <string name="sucessDeleteTask">Sucessfull remove task.</string>
     <string name="cancel">Cancel</string>
+    <string name="permission_granted">Permission garanted.</string>
+    <string name="permission_refused">Permission refused.</string>
+    <string name="error_capturrImage">Error to capture image.</string>
+    <string name="profile_saved">Profile saved.</string>
+    <string name="name">Name</string>
+    <string name="username">Username</string>
 
 </resources>
